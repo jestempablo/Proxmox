@@ -5,7 +5,7 @@ var_disk="8"
 var_cpu="2"
 var_ram="2048"
 var_os="ubuntu"
-var_version="20.04"
+var_version="22.10"
 NSAPP=$(echo ${APP,,} | tr -d ' ')
 var_install="${NSAPP}-install"
 NEXTID=$(pvesh get /cluster/nextid)
@@ -101,7 +101,7 @@ function advanced_settings() {
   var_version=$(whiptail --title "UBUNTU VERSION" --radiolist "Choose Version" 10 58 3 \
     "18.04" "Bionic" OFF \
     "20.04" "Focal" ON \
-    "21.10" "Impish" OFF \
+    "22.10" "Kinetic" OFF \
     3>&1 1>&2 2>&3)
   exitstatus=$?
   if [ $exitstatus = 0 ]; then echo -e "${DGN}Using Ubuntu Version: ${BGN}$var_version${CL}"; fi
